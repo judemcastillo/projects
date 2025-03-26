@@ -1,0 +1,129 @@
+.background-image{
+    background-image: url('https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?q=80&w=1862&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: spa
+    ;
+    justify-content: space-between;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'calibri';
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65%;
+    padding: 20px 0 20px 0;
+   
+}
+.main > .header{
+    padding: 20px;
+
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-width: 200px; 
+    max-width: 300px;
+}
+#signForm{
+    display: grid;
+    grid-template-columns: auto auto; 
+    gap: 1.5rem;
+    column-gap: 5rem;
+    padding: 20px 0 20px 0;
+    font-size: 20px;
+    box-sizing: border-box;
+    justify-content: start;
+
+}
+.form{
+    padding: 1.5rem;
+    margin: 10px 0 10px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    width: 100%;
+}
+input{
+    font-size: 18px;
+    padding: 3px;
+}
+#signup{
+    background-color: #596D48;
+    color: white;
+    padding: 0.9rem 2.8rem;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    max-width: fit-content;
+}
+#signup:hover{
+    transform: scale(105%);
+    transition: 0.1s ease-in-out;
+}
+p{
+    font-size: 18px;
+    padding: 20px;
+}
+a{
+    color: #596D48;
+    text-decoration: none;
+    font-weight: bold;
+}
+#signForm :invalid{
+    border: 2px solid red;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.45); 
+    height: 15%;
+    margin-top: 40%;
+}
+figcaption{
+    font-family: "Norse Bold";
+    color: white;
+    font-size: 5rem;
+}
+#logoimage{
+    max-height: 112px;
+    max-width: 112px;
+}
+@font-face {
+    font-family: "Norse Bold"; /* Custom name you choose */
+    src: url("Norse-Bold.otf") format("opentype"); /* Path to your font */
+    font-weight: bold; /* Optional: if the font is bold by default */
+    font-style: normal; /* Optional: if it's not italic */
+}
+.imagefooter{
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+    align-self: center;
+}
+.imagefooter a{
+    color: white;
+    text-decoration: underline;
+    font-weight: normal;
+}
