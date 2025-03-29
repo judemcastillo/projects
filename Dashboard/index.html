@@ -10,14 +10,20 @@
     <div class="container">
         <header>
             <div class="search-bar">
-                <div class="search-icon"></div>
-                <input type="text" placeholder="Search..." id="search">
-                <div class="top-profile"></div>
+                <div class="top-search">
+                    <div class="search-icon"></div>
+                    <input type="text" placeholder="Search..." id="search">
+                </div>
+                <div class="top-profile"> 
+                    <div class="alert icon"></div>
+                    <img src="images/profile-pic.jpg" class="profile-pic-img" id="profile-pic-small"/>
+                    <h3 class="username">Sample User</h3>
+                </div>
             </div>
             <div class="profile">
                 <div class="profile-pic">
-                    <img src="#" alt="Profile Picture">
-                    <div>
+                    <img src="images/profile-pic.jpg" alt="Profile Picture" class="profile-pic-img">
+                    <div class="welcome-message">
                         <p>Hello</p>
                         <h2>Sample User</h2>
                     </div>
@@ -33,7 +39,7 @@
         <sidebar>
             <h2>Dashboard</h2>
             <div class="nav">
-                <div class="nav-item"><span>Home</span></div>
+                <div class="nav-item"><div class="home-icon" id="icon"></div><span>Home</span></div>
                 <div class="nav-item"><span>Profile</span></div>
                 <div class="nav-item"><span>Messages</span></div>
                 <div class="nav-item"><span>History</span></div>
@@ -50,33 +56,144 @@
             </div>
         </sidebar>
         <main>
-            
-            <div class="content-container">
-                <div class="content-main">Content 1</div>
-                <div class="content-main">Content 2</div>
-                <div class="content-main">Content 3</div>
-                <div class="content-main">Content 4</div>
-                <div class="content-main">Content 5</div>
-                <div class="content-main">Content 6</div>
-            </div>
-            <div class="content-side">
-                <div class="news">
-                    <h2>News</h2>
-                    <div class="news-item">
-                        <p>Sample News 1</p>
+            <div class="content-right"><h2>Projects</h2>
+                <div class="content-container">
+                    <div class="content-main">
+                        <h2>Content 1</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Dolorem accusamus voluptas numquam veritatis, eligendi 
+                            repudiandae dignissimos iste c
+                            upiditate totam 
+                            pariatur.</p>
+                        <div class="action-buttons">
+                            <div class="icon star">
+                                
+                            </div>
+                            <div class="icon view">
+
+                            </div>
+                            <div class="icon fork">
+
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="news-item">
-                        <p>Sample News 2</p>
+                    <div class="content-main">
+                        <h2>Content 2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Dolorem accusamus voluptas numquam veritatis, eligendi 
+                            repudiandae dignissimos is
+                            te cupiditate totam pariatur.</p>
+                        <div class="action-buttons">
+                            <div class="icon star">
+                                
+                            </div>
+                            <div class="icon view">
+
+                            </div>
+                            <div class="icon fork">
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="news-item">
-                        <p>Sample News 3</p>
+                    <div class="content-main">
+                        <h2>Content 3</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Dolorem accusamus voluptas numquam veritatis, eligendi 
+                            repudiandae dignissimos 
+                            iste cupiditate totam pariatur.</p>
+                        <div class="action-buttons">
+                            <div class="icon star">
+                                
+                            </div>
+                            <div class="icon view">
+
+                            </div>
+                            <div class="icon fork">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-main">
+                        <h2>Content 4</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Dolorem accusamus voluptas numquam veritatis, eligendi 
+                            repudiandae dignissi
+                            mos iste cupiditate totam pariatur.</p>
+                        <div class="action-buttons">
+                            <div class="icon star">
+                                
+                            </div>
+                            <div class="icon view">
+
+                            </div>
+                            <div class="icon fork">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-main">
+                        <h2>Content 5</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Dolorem accusamus voluptas numquam veritatis, eligendi 
+                            repudiandae dignissimos iste cupiditate totam p
+                            ariatur.</p>
+                        <div class="action-buttons">
+                            <div class="icon star">
+                                
+                            </div>
+                            <div class="icon view">
+
+                            </div>
+                            <div class="icon fork">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-main">
+                        <h2>Content 6</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Dolorem accusamus voluptas numquam veritatis, eligendi 
+                            repudiandae dignissimos iste cupiditate totam pariatur.</p>
+                        <div class="action-buttons">
+                            <div class="icon star">
+                                
+                            </div>
+                            <div class="icon view">
+
+                            </div>
+                            <div class="icon fork">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="trend">
-                    <h2>Trending</h2>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
+            </div>
+            <div class="content-side">
+                <div>
+                    <h2>News</h2>
+                    <div class="news">
+                        <div class="news-item">
+                            <h2>Site Maintenance</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque veniam recusandae aspernatur dicta eum alias ut et nesciunt, assumenda officia.</p>
+                        </div>
+                        <div class="news-item">
+                            <h2>Community Share Day</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque veniam recusandae aspernatur dicta eum alias ut et nesciunt, assumenda officia.</p>
+                        </div>
+                        <div class="news-item">
+                            <h2>Update Privacy Policy</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque veniam recusandae aspernatur dicta eum alias ut et nesciunt, assumenda officia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Trending</h2>                
+                    <div class="trend">                    
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>
+                    </div>
                 </div>
             </div>
         </main>

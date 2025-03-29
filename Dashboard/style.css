@@ -11,38 +11,51 @@ html{
 }
 .container{
     display: grid;
-    height: 100vh;
-    width: 100vw;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
+    min-height: 100vh;
+    max-width: 2000px;
+    grid-template-columns: 220px 3fr;
+    grid-template-rows: 200px 3fr;
+    padding: 0;
+    margin:0 auto;
 }
 header{
     grid-column: 2/ 3;
     grid-row: 1 / 2;
-    background-color: #333;
-    color: white;
-    padding: 0;
+    background-color: rgb(230, 245, 248);
+    color: black;
+    padding: 20px 40px;
     margin: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 main{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: rgb(226, 232, 240);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-top: 1rem;
 }
 sidebar{
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     background-color: #39768f;
- 
+    position: fixed; 
     display: flex;
     flex-direction: column; 
     gap: 20px;
     font-family: Verdana;
     color: aliceblue;
-    font-size: 20px;
-    
+    font-size: 20px;    
     justify-content: space-between;
+    height: 100%;
+    width: 220px;
+    overflow: hidden;
 }
 sidebar > h2{
     color: whitesmoke;
@@ -53,49 +66,58 @@ sidebar > h2{
 .nav,.settings{
     display: flex;
     flex-direction: column;
-    cursor: pointer;
-
+    cursor: pointer;   
+}
+.settings{
+    padding-bottom:10px ;
 }
 .nav-item:hover,.nav-settings:hover{
     background-color: #2b4f6d;
     scale: 1.06;
     transition: 300ms;
-    animation: ease-in-out;
+
 
 }
 .nav-item,.nav-settings{
     padding: 10px;
+    transition: all 300ms;
+    display: flex;
+    align-items: flex-start;
 }
 span{
-    padding-left: 20px;
+    padding-left: 0;
 }
-header{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
+
 .profile{
     display: flex;
     flex-direction: row;
     flex-grow: 2;
     justify-content: space-between;
     align-items: center;
+    padding: 0px;
 }
 .search-bar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex: 1;
+    gap: 50px;
+}
+.top-search{
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-grow: 1;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 2;
 }
 .search-bar input{
     
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 0.8rem;
     border: 1px solid #ccc;
-    width:300px;
-    font-family: monospace;
+    font-family: verdana;
+    width: 100%;
 }
 .profile-pic{
     display: flex;
@@ -104,48 +126,42 @@ header{
     align-items: center;
     gap: 30px;
 }
-.profile-pic img{
-    width: fit-content;
-    height: fit-content;
+.profile-pic-img{
+    width: 4.5rem;
+    height: 4.5rem; 
     border-radius: 50%;
+    border: 5px solid #39768f;
 }
-main{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-}
+
 .content-container{
-    flex-grow: 3;
+    flex:3;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
     gap: 20px;
     align-items: center;
+}
+.content-right{
+    flex: 3;
 }
 .content-side{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;    
+    flex: 1;
 }
 .content-main{
     display: flex;
     flex-direction: column;
-    gap: 10px;
     background-color: rgba(224, 255, 255, 0.747);
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
-    height: 70%;
-}
-.content-side{
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-    justify-content: space-evenly;
-    padding: 10px;
- 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    height: 15rem;
+    border-left: 8px solid goldenrod;
 }
 .trend{
     display: flex;
@@ -164,4 +180,128 @@ main{
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.profile-buttons button{
+    background-color: #39768f;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    width: 95px;
+    font-size: 14px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 0.5rem 0px;
+    border-radius: 14px;
+    margin: 5px;
+}
+.profile-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.news div{
+    border-bottom: 2px solid silver;
+}
+.news div:last-child{
+    border-bottom: none;
+}
+.news{
+    padding: 20px;
+}
+.content-main p{
+    display:flex;
+    white-space: normal;
+    flex-grow: 5;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: wrap;
+
+}
+.content-main h2{
+    flex-grow: 1;
+    display: flex;
+    margin:  0 0;
+}
+.icon{
+    width: 2rem;
+    height: 2rem;
+    background-color: black;
+    cursor: pointer;
+    transition: all 200ms;
+}
+.action-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 5px;
+    margin: 4px;
+    gap: 1rem;    
+}
+.home-icon{
+    mask: url(images/home-account.svg) no-repeat center;    
+}
+#icon{
+    width: 50px;
+    background-color: whitesmoke;
+    height: 1.5rem;
+}
+.welcome-message{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+}
+.welcome-message h2{
+    margin: 0;
+}
+
+.icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: black;
+    cursor: pointer;
+    transition: all 200ms;
+}
+.star{
+    mask: url(images/star-plus-outline.svg) no-repeat center;
+}
+.view{
+    mask: url(images/eye-plus-outline.svg) no-repeat center;
+}
+.fork{
+    mask: url(images/source-fork.svg) no-repeat center;
+}
+.top-profile #profile-pic-small{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    outline: none;
+    border: 3px solid #39768f;
+}
+.top-profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+    flex: 1;
+    justify-content: flex-end;
+}
+.alert{
+    mask: url(images/bell-ring-outline.svg) no-repeat center;
+    height: 1.5rem;
+    width: 1.5rem;
+    aspect-ratio: 1;
+}
+.search-icon{
+    mask: url(images/magnify.svg) no-repeat center;
+    height: 1.5rem;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-color: black;
+    cursor: pointer;
+    transition: all 200ms;
 }
