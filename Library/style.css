@@ -11,9 +11,10 @@
 header{
     display: flex;
     justify-content: center;
-    background-color: #fffbe6;
+    background-color: #ffeee6;
     padding: 1.5rem;  
     box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.15);
+
 }
 main{
     display: flex;
