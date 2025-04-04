@@ -62,13 +62,21 @@ html{
     color: #2936f1;
     font-weight: bold;
 }
+.controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;   
+}
 .controls button {
     color: white;
     padding: 8px;
     border-radius: 8px;
     border: 2px solid black;
     font-size: 20px;
-    margin-left: 1em;
     cursor: pointer;
     background-color: black;
 }
@@ -98,7 +106,7 @@ html{
 }
 .overlay{
     background-color: rgba(56, 56, 56, 0.37) ;
-    z-index: 1;
+    z-index: -1;
     height: 330px;
     width: 330px;
 
@@ -109,8 +117,80 @@ html{
     display: flex;
     align-items: center; 
     z-index: 2;
+    justify-content: center;
 }
 .Player-Names button{
     margin-top: 10px;
     padding: 5px 10px;
+}
+#hide{
+    display: none;
+}
+.play{
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #123a6b 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.play:hover{
+    background:linear-gradient(to bottom, #123a6b 5%, #7892c2 100%);
+    background-color:#123a6b;
+}
+.play:active{
+    position:relative;
+    top:1px;
+}
+.display{
+    grid-row: 2/3; 
+    grid-column: 1/2;
+    margin: auto;
+    align-items: center;
+    text-align: center; 
+    align-content: center;
+    z-index: 2;
+    font-size: 20px;
+    background-color: rgba(56, 56, 56, 0.37) ;
+    height: 330px;
+    width: 330px;
+}
+.white{
+    color: white;
+    font-weight: bold;
+}
+.results{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 0.8rem;
+    background-color: rgb(46, 46, 46);
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 30%;
+    width: 65%;  
+}
+.scoreboard{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.scoreboard p{
+    color: rgb(15, 15, 15);
+    text-align: center;
+    font-weight: normal;
 }

@@ -1,23 +1,37 @@
 window.addEventListener('DOMContentLoaded', () => {
-    let PlayerX = '';
-    let PlayerO = '';
+    let PlayerX = 'Player';
+    let PlayerO = 'Player';
+    let playerODisplay = document.querySelector('#playerODisplay');
+    let playerXDisplay = document.querySelector('#playerXDisplay');
     const tiles = Array.from(document.querySelectorAll('.tile'));
     const resetButton = document.querySelector(".reset");
     const playerDisplay = document.querySelector('.display-player');
     const announcer = document.querySelector('.announcer');
     const submitButton = document.querySelector("#submit");
+    const playButton = document.querySelector(".play");
+    const playerForm = document.querySelector('#player-overlay');
+    const playerNames = document.querySelector('.Player-Names');
+    const newGameButton = document.querySelector(".newGame");
     
+    playButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        playButton.id = "hide";
+        playerNames.removeAttribute('id');
+    }
+    );
 
     submitButton.addEventListener("click",(e)=>{
         e.preventDefault(); // ⛔ Prevents page reload!
         PlayerX = document.querySelector("#playerXName").value.trim();
         PlayerO = document.querySelector("#playerOName").value.trim();
-        const playerForm = document.querySelector('#player-overlay');
 
         if(!PlayerO || !PlayerX){
             alert("Please fill in all fields.");
             return;
         }
+        console.log(PlayerX, PlayerO);
+        playerXDisplay.innerText = PlayerX+": ";
+        playerODisplay.innerText = PlayerO+": ";
         playerForm.style.display = "none";
         playerDisplay.innerText = PlayerX; // show first player's name
 
@@ -27,6 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let board =['','','','','','','','',''];
     let currentPlayer = `X`;
     let isGameActive = true;
+    let PlayerXScore = 0;
+    let PlayerOScore = 0;
 
     const PLAYERX_WON = 'PLAYERX_WON';
     const PLAYERO_WON = 'PLAYERO_WON';
@@ -94,6 +110,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (roundWon) {
             announce(currentPlayer === 'X' ? PLAYERX_WON : PLAYERO_WON);
+            if (currentPlayer === 'X') {
+                PlayerXScore++;
+                document.querySelector("#playerXScore").innerText = PlayerXScore;
+            }
+            else {
+                PlayerOScore++;
+                document.querySelector("#playerOScore").innerText = PlayerOScore;
+            }
             isGameActive = false;
             return;
         }
@@ -105,14 +129,16 @@ window.addEventListener('DOMContentLoaded', () => {
     const announce = (type) => {
         switch(type){
             case PLAYERO_WON:
-                announcer.innerHTML = `${PlayerO}<span class="playerO">O</span> Won`;
+                announcer.innerHTML = `<span class="results"><span class="playerO">${PlayerO}</span> <span class="white">Won!</span></span>`;
                 break;
             case PLAYERX_WON:
-                announcer.innerHTML = `${PlayerX}<span class="playerX">X</span> Won`;
+                announcer.innerHTML = `<span class="results"><span class="playerX">${PlayerX}</span> <span class="white">Won!</span></span>`;
                 break;
             case TIE:
-                announcer.innerText = 'Tie';
+                announcer.innerHTML = '<span class="results"><span class="white">It\'s a Tie!</span></span>';
+
         }
+
         announcer.classList.remove('hide');
     };
 
@@ -138,6 +164,44 @@ window.addEventListener('DOMContentLoaded', () => {
             tile.classList.remove('playerO');
         });
     }
+    const newGame = () => {
+        // Reset everything
+        board = ['', '', '', '', '', '', '', '', ''];
+        isGameActive = true;
+        currentPlayer = 'X';
+    
+        tiles.forEach(tile => {
+            tile.innerText = '';
+            tile.classList.remove('playerX');
+            tile.classList.remove('playerO');
+        });
+    
+        // Reset scores
+        PlayerXScore = 0;
+        PlayerOScore = 0;
+        document.querySelector("#playerXScore").innerText = PlayerXScore;
+        document.querySelector("#playerOScore").innerText = PlayerOScore;
+    
+        // Reset player names
+        PlayerX = 'Player';
+        PlayerO = 'Player';
+        playerXDisplay.innerText = "Player X:";
+        playerODisplay.innerText = "Player O:";
+        playerDisplay.innerText = '';
+    
+        // Reset form
+        document.querySelector("#playerXName").value = '';
+        document.querySelector("#playerOName").value = '';
+        document.querySelector(".play").classList.remove("hide");
+        document.querySelector(".Player-Names").classList.remove("hide");
+        playerForm.style.display = "flex";
+    
+        // Hide announcer
+        announcer.classList.add('hide');
+    };
+    
+    newGameButton.addEventListener('click', newGame);
+    
 
     tiles.forEach( (tile, index) => {
         tile.addEventListener('click', () => userAction(tile, index));

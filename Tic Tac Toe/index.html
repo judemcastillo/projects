@@ -11,16 +11,19 @@
         <header>
             <h2>Tic-Tac-Toe</h2>
             <p><span class="display-player playerX">X</span>'s turn</p>
-            <div class="display announcer hide"></div>
         </header>
-        <div class="overlay Player-form" id="player-overlay">
-            <form class="Player-Names">
+        <div class="display announcer hide"></div>
+        <div class="overlay Player-form" id="player-overlay">           
+            <form class="Player-Names" id="hide">
                 <h3>Player<span class="playerX"> X</span> name:</h3>
                 <input type="text" id="playerXName">
                 <h3>Player<span class="playerO"> O</span> name:</h3>
                 <input type="text" id="playerOName">
-                <button id="submit">Submit</button>
+                <button id="submit" type="button">Submit</button>
             </form>
+            <div class="play-button">
+                <button class="play" >Play</button>
+            </div>
         </div>
         <div class="gameBoard">
             <div class="tile"></div>
@@ -33,8 +36,19 @@
             <div class="tile"></div>
             <div class="tile"></div>
         </div>
+        <div class="scoreboard">
+            <div class="score">
+                <span class="playerX"><h3 id="playerXDisplay">Player X</span>:</h3>
+                <p id="playerXScore">0</p>
+            </div>
+            <div class="score">
+                <span class="playerO"><h3 id="playerODisplay">Player O</span>:</h3>
+                <p id="playerOScore">0</p>
+            </div>
+        </div>
         <div class="controls">
-            <button class="reset">Reset</button>
+            <button class="reset">Reset Board</button>
+            <button class="newGame">New Game</button>
         </div>
     </div>
     <script src="script.js"></script>
