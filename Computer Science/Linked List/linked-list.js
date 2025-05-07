@@ -35,10 +35,10 @@ class LinkedList {
 	size() {
 		return this.length;
 	}
-	head() {
+	getHead() {
 		return this.head;
 	}
-	tail() {
+	GetTail() {
 		return this.tail;
 	}
 	at(index) {
@@ -145,7 +145,7 @@ class LinkedList {
 		}
 
 		let current = this.head;
-        
+
 		for (let i = 0; i < index - 1; i++) {
 			current = current.next;
 		}
