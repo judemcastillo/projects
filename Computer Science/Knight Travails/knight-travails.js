@@ -38,3 +38,5 @@ function knightMoves(start, end) {
 		}
 	}
 }
+console.log("Knight Travails:");
+knightMoves([0, 0], [7, 7]);
